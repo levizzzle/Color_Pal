@@ -18,6 +18,11 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
+        android:id="@+id/navigation_learn"
+        android:name="com.example.colorpal.ui.learn.LearnFragment"
+        android:label="Learn"
+        tools:layout="@layout/fragment_learn" />
+    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.colorpal.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"

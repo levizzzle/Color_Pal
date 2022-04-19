@@ -1,9 +1,12 @@
 package com.example.colorpal;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +21,7 @@ import com.example.colorpal.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    VideoView vid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,4 +50,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void playVideo(View v){
+        MediaController m = new MediaController(this);
+        vid.setMediaController(m);
+
+        String path = "android.resource://com.example.colorpal/"+R.raw.whatis;
+
+        Uri u = Uri.parse(path);
+        vid.setVideoURI(u);
+        vid.start();
+
+    }
 }
